@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/tripListEntry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/enterNamesHereLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enterNamesHere"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editText15"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText16"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText17"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText18"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText19"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText20"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText21"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText22"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText23"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText24"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText25"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText26"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText27"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText28"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText29"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText30"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText6"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText7"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText8"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText9"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText10"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText11"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText12"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText13"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText14"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="enter name here"
+                android:inputType="textPersonName"
+                android:text="@string/enterNameText" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

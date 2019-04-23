@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/enterListIdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:autofillHints="@string/enterListId"
+        android:ems="10"
+        android:hint="@string/enterListId"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="0dp"
+        tools:targetApi="o"
+        tools:text="@string/enterListId" />
+
+    <TextView
+        android:id="@+id/orLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_marginBottom="94dp"
+        android:gravity="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/enterTripNameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/enterListIdEditText"
+        tools:layout_editor_absoluteX="170dp"
+        tools:text="@string/OR" />
+
+    <EditText
+        android:id="@+id/enterTripNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:layout_marginBottom="332dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enterTripName"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orLabel"
+        tools:layout_editor_absoluteX="16dp"
+        tools:targetApi="o"
+        tools:text="@string/enterTripName" />
+</android.support.constraint.ConstraintLayout>
