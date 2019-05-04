@@ -9,6 +9,8 @@ public class HasListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.have_list_view);
         setTitle(R.string.haveListTitleLabel);
 

@@ -23,7 +23,7 @@ public class StudentsAdapter extends ArrayAdapter<Student> {
 
         //check if the view is being used, otherwise inflate it.
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.student_name_entry_fragment, parent, false);
         }
 
         //look up view for data population

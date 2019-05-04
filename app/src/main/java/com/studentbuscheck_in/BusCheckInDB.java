@@ -42,13 +42,12 @@ public class BusCheckInDB {
     public static final String STUDENT_LIST_ID = "list_id";
     public static final int    STUDENT_LIST_ID_COL = 4;
 
-
-
+    private static int currentVersion;
 
     //create students table
     public static final String CREATE_STUDENT_TABLE = "CREATE TABLE " + STUDENT_TABLE + " ("
             + STUDENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + STUDENT_NAME_FIRST_LAST +
-            "TEXT, " + STUDENT_SCHOOL_ID + " INTEGER, " + STUDENT_IS_PRESENT +
+            " TEXT, " + STUDENT_SCHOOL_ID + " INTEGER, " + STUDENT_IS_PRESENT +
              " TEXT, " + STUDENT_LIST_ID + " INTEGER);";
 
     //create lists table
@@ -57,11 +56,17 @@ public class BusCheckInDB {
                 LIST_ID   + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 LIST_NAME + " TEXT);";
 
-    public static final String DROP_STUDENT_TABLE = "DROP TABLE IF EXISTS " + STUDENT_TABLE;
-    public static final String DROP_LIST_TABLE = "DROP TABLE IF EXISTS " + LIST_TABLE;
+    public static final String DROP_STUDENT_TABLE = "DROP TABLE IF EXISTS " + STUDENT_TABLE + ";";
+    public static final String DROP_LIST_TABLE = "DROP TABLE IF EXISTS " + LIST_TABLE + ";";
 
 
+    private static void setCurrentVersion(int version) {
+        BusCheckInDB.currentVersion = version;
+    }
 
+    public int getCurrentVersion () {
+        return currentVersion;
+    }
     private DBHelper dbHelper;
     private SQLiteDatabase db;
 
@@ -70,21 +75,22 @@ public class BusCheckInDB {
         public DBHelper (Context context,  String name,
                          SQLiteDatabase.CursorFactory factory, int version) {
             super(context, name, factory, version);
+            BusCheckInDB.setCurrentVersion(version);
         }
+
+
 
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
+
+            //enter new data tables
 
             sqLiteDatabase.execSQL(CREATE_LIST_TABLE);
 
             sqLiteDatabase.execSQL(CREATE_STUDENT_TABLE);
 
-            //insert a sample student
-            String insertString = "INSERT INTO " + STUDENT_TABLE + " VALUES (1, 'Joe Bloggs'," +
-                    " 12345, 1, 1)";
-            String inserListString = "INSERT INTO " + LIST_TABLE + " VALUES (1, 'first_list')";
-            sqLiteDatabase.execSQL(insertString);
-            sqLiteDatabase.execSQL(inserListString);
+
 
         }
 
@@ -103,8 +109,11 @@ public class BusCheckInDB {
 
     }
     public void upgradeDatabase (Context context, int oldVersion, int newVersion ){
+        openWritableDatabase();
 
         dbHelper.onUpgrade(db, oldVersion, newVersion);
+
+        closeDatabase();
 
 
     }
@@ -126,8 +135,9 @@ public class BusCheckInDB {
         return students;
     }
     public BusCheckInDB (Context context) {
-        dbHelper = new DBHelper(context, DB_NAME, null, 2);
-//        dbHelper.onUpgrade(db, DB_VERSION, 2);
+
+        //sets the current version
+        dbHelper = new DBHelper(context, DB_NAME, null, 1);
 
     }
 
@@ -140,9 +150,8 @@ public class BusCheckInDB {
         openReadableDatabase();
         Cursor cursor = db.query(LIST_TABLE, null,
                 where, whereArgs, null, null, null);
-        List list = null;
         cursor.moveToFirst();
-        list = new List(cursor.getInt(LIST_ID_COLUMN),
+        List list = new List(cursor.getInt(LIST_ID_COLUMN),
                 cursor.getString(LIST_NAME_COLUMN));
         if (cursor != null)
             cursor.close();
@@ -158,11 +167,11 @@ public class BusCheckInDB {
         } else {
             try {
                 return new Student (
-                        cursor.getLong(STUDENT_ID_COLUMN),
+                        cursor.getInt(STUDENT_ID_COLUMN),
                         cursor.getString(STUDENT_SCHOOL_ID_COLUMN),
                         cursor.getString(STUDENT_NAME_LAST_FIRST_COLUMN),
-                        cursor.getString(STUDENT_IS_PRESENT_COLUMN));
-//                        cursor.getLong(STUDENT_LIST_ID_COL));
+                        cursor.getString(STUDENT_IS_PRESENT_COLUMN),
+                        cursor.getLong(STUDENT_LIST_ID_COL));
 
 
             }
@@ -189,11 +198,11 @@ public class BusCheckInDB {
 
     public long insertStudent(Student student) {
         ContentValues cv = new ContentValues();
-        cv.put(LIST_ID, student.getListId());
+//        cv.put(LIST_ID, student.getListId());
         cv.put(STUDENT_NAME_FIRST_LAST, student.getStudentFirstLast());
         cv.put(STUDENT_IS_PRESENT, student.getIsPresent());
         cv.put(STUDENT_SCHOOL_ID, student.getStudentSchoolId());
-//        cv.put(STUDENT_LIST_ID, student.getListId());
+        cv.put(STUDENT_LIST_ID, student.getListId());
 
         this.openWritableDatabase();
         long rowID = db.insert(STUDENT_TABLE, null, cv);
@@ -237,6 +246,7 @@ public class BusCheckInDB {
         cv.put(LIST_NAME, listName);
         this.openWritableDatabase();
         long listId = db.insert(LIST_TABLE, null, cv);
+        this.closeDatabase();
 
         for ( Student student : list) {
 
@@ -245,6 +255,9 @@ public class BusCheckInDB {
             studentCV.put(STUDENT_NAME_FIRST_LAST, student.getStudentFirstLast());
             studentCV.put(STUDENT_IS_PRESENT, student.getIsPresent());
             studentCV.put(STUDENT_SCHOOL_ID, student.getStudentSchoolId());
+            this.openWritableDatabase();
+            long rowId = db.insert(STUDENT_TABLE, null, studentCV);
+
 
         }
 

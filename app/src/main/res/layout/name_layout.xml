@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    tools:context="com.studentbuscheck_in.MainActivity" >
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/textDialog"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/til">
+
+        <EditText
+            android:id="@+id/textDialog2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"/>
+    </android.support.design.widget.TextInputLayout>
+
+</RelativeLayout>

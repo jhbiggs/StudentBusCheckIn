@@ -2,22 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFAC83"
-        android:padding="7dp"
-        android:text="@string/student_list"
-        android:textSize="22sp" />
+    android:orientation="vertical"
+    >
 
 
   <ListView
-        android:id="@+id/itemsListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+      android:id="@+id/itemsListView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:entries="@string/enter_names_here"
+      android:scrollbars="vertical" />
+
 
 
 </LinearLayout>

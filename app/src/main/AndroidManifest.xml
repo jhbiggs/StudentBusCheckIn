@@ -19,6 +19,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.studentbuscheck_in.MainActivity" />
         </activity>
+        <activity android:name=".ListItemActivity"
+            android:label="Enter Students"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

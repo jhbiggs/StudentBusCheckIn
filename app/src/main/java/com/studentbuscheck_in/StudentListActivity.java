@@ -1,6 +1,7 @@
 package com.studentbuscheck_in;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,25 +16,30 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import static com.studentbuscheck_in.MainActivity.sampleList;
+//import static com.studentbuscheck_in.MainActivity.sampleList;
 
-public class StudentListActivity extends Activity {
-    private String[] myStringArray;
+public class StudentListActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //get the main view
         setContentView(R.layout.activity_student_list);
-        myStringArray = new String[]{"bob", "chuck", "jenny"};
-        ListView listView = findViewById(R.id.itemsListView);
-        View itemView = findViewById(R.id.list_item);
-//        ArrayAdapter<Student> adapter = new ArrayAdapter<>(this,
-//                R.layout.list_item, sampleList);
-//        listView.setAdapter(adapter);
-        StudentsAdapter studentsAdapter = new StudentsAdapter(this, sampleList);
-        listView.setAdapter(studentsAdapter);
+        setTitle("Student List:");
+        //get the list view for the student list
+       ListView listView = findViewById(R.id.itemsListView);
+        //start a StudentsAdapter to populate the view with data.  SampleList is an array
+        // of students
+//        StudentsAdapter studentsAdapter = new StudentsAdapter(this, sampleList);
+//        listView.setAdapter(studentsAdapter);
 
 
     }
 
 
+    @Override
+    public void onClick(View view) {
+
+        Intent intent = new Intent(this, ListItemActivity.class);
+        startActivity(intent);
+    }
 }

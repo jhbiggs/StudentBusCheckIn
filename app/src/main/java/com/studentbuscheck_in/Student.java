@@ -1,10 +1,14 @@
 package com.studentbuscheck_in;
 
+import java.util.ArrayList;
+
+import static com.studentbuscheck_in.MainActivity.myDatabase;
+
 public class Student {
 
 
    private long listId;
-    private long studentId;
+    private int studentId;
     private String studentSchoolId;
     private String studentFirstLast;
     private String isPresent;
@@ -17,7 +21,7 @@ public class Student {
         studentSchoolId = "12";
         isPresent = YES;
     }
-    public Student (long studentId, String studentSchoolId, String studentFirstLast,
+    public Student (int studentId, String studentSchoolId, String studentFirstLast,
                     String isPresent, long listId) {
         this.studentId = studentId;
         this.studentSchoolId = studentSchoolId;
@@ -26,7 +30,7 @@ public class Student {
         this.listId = listId;
     }
 
-    public Student (long studentId, String studentSchoolId, String studentFirstLast,
+    public Student (int studentId, String studentSchoolId, String studentFirstLast,
                     String isPresent) {
         this.studentId = studentId;
         this.studentSchoolId = studentSchoolId;
@@ -34,9 +38,11 @@ public class Student {
         this.isPresent = isPresent;
     }
     public Student (String studentSchoolId, String studentFirstLast, String isPresent) {
+
         this.studentSchoolId = studentSchoolId;
         this.studentFirstLast = studentFirstLast;
         this.isPresent = isPresent;
+
     }
 
     public long getListId() {return listId; } ;
@@ -44,7 +50,7 @@ public class Student {
         return studentId;
     }
 
-    public void setStudentId(long studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 

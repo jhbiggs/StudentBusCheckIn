@@ -26,7 +26,7 @@ public class listAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
 //        if (convertView == null) {
-//            convertView = getLayoutInflater().inflate(R.layout.list_item, viewGroup, false);
+//            convertView = getLayoutInflater().inflate(R.layout.student_name_entry_fragment, viewGroup, false);
 //        }
 //
 //        ((TextView) convertView.findViewById(R.id.student_name_list_item))
